@@ -12,7 +12,7 @@ const ProfileSchema = new Schema({
   skills: { type: [String], required: true },
   bio: { type: String },
   githubusername: { type: String },
-  expience: [
+  experience: [
     {
       title: { type: String, required: true },
       company: { type: String, required: true },
