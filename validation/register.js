@@ -22,24 +22,24 @@ module.exports =  function validateRegisterInput(data){
     errors.email = "Email field is required";
   }
 
-  if(!validator.isEmail(data.email)){
-    errors.email = "Email is invalid";
-  }
+  // if(!validator.isEmail(data.email)){
+  //   errors.email = "Email is invalid";
+  // }
 
   if(validator.isEmpty(data.password)){
     errors.password = "Password field is required";
   } 
 
-  if(!validator.isLength(data.password, { min: 6, max: 30 })){
-    errors.password = "Password must be at least 6 characters";
-  }
+  // if(!validator.isLength(data.password, { min: 6, max: 30 })){
+  //   errors.password = "Password must be at least 6 characters";
+  // }
 
   if(validator.isEmpty(data.password2)){
-    errors.password2 = "Confirm your password";
+    errors.password2 = "HOLA MARACHITO1";
   } 
 
   if(!validator.equals(data.password, data.password2)){
-    errors.password2 = "Passwords don't match";
+    errors.password2 = "HOLA MARACHITO";
   } 
 
   return {
