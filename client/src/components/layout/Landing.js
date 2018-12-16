@@ -1,9 +1,24 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
+import { connect } from 'react-redux';
 
 
 class Landing extends Component {
   render() {
+    const authLinks = (
+      <Link to="/dashboard" className="btn btn-lg btn-info mr-2">Go to Dashboard</Link>
+    )
+
+    const guestLinks = (
+      <Fragment>
+        <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
+        <Link to="/login" className="btn btn-lg btn-light">Login</Link>
+      </Fragment>
+    )
+
+    const { isAuthenticated } = this.props.auth
+
     return (
       <div className="landing">
         <div className="dark-overlay landing-inner text-light">
@@ -14,8 +29,7 @@ class Landing extends Component {
               </h1>
                 <p className="lead"> Create a developer profile/portfolio, share posts and get help from other developers</p>
                 <hr />
-                <Link to="/register" className="btn btn-lg btn-info mr-2">Sign Up</Link>
-                <Link to="/login" className="btn btn-lg btn-light">Login</Link>
+                { isAuthenticated ? authLinks : guestLinks }
               </div>
             </div>
           </div>
@@ -25,4 +39,12 @@ class Landing extends Component {
   }
 }
 
-export default Landing
+Landing.propTypes = {
+  auth: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateToProps)(Landing)
