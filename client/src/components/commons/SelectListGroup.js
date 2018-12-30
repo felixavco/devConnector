@@ -23,7 +23,7 @@ const SelectListGroup = ({
         name={name}
         value={value}
         onChange={onChange}
-        novalidate
+        noValidate
       >
       
         { selectOptions }

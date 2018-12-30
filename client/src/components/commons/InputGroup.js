@@ -24,7 +24,7 @@ const InputGroup = ({
         value={value}
         onChange={onChange}
         type={type}
-        novalidate
+        noValidate
       />
       {error && (<div className="invalid-feedback">{ error }</div>)}
     </div>

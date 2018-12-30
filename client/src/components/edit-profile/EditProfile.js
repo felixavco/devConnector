@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import TextFieldGroup from '../commons/TextFieldGroup'
 import TextAreaFieldGroup from '../commons/TextAreaFieldGroup'
@@ -184,6 +184,9 @@ class EditProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
+              <Link to="/dashboard" className="btn btn-light">
+                Go Back
+              </Link>
               <h1 className="display-4 text-center">
                 Edit Profile
               </h1>
@@ -195,7 +198,8 @@ class EditProfile extends Component {
                   value={handle}
                   onChange={this.onChange}
                   error={errors.handle}
-                  info="A unique hanble for your profile URL. Your full name, company name, nickname."
+                  info="this is a unique identifier, cannot be changed"
+                  disabled='disabled'
                 />
 
                 <SelectListGroup 
