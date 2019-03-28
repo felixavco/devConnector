@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types';
-import isEmpty from '../../validation/is-empty'
 import Moment from 'react-moment'
 
 class ProfileCreds extends Component {
